@@ -12,7 +12,7 @@ object Read {
             .builder()
             .getOrCreate()
 
-        val csv_df = spark.read.format("csv").option("header", "true").load("/Users/arpan/spark-cassandra/previous_employees_by_title.csv")
+        val csv_df = spark.read.format("csv").option("header", "true").load("/path/to/example-cassandra-spark-job-scala/previous_employees_by_title.csv")
 
         csv_df.show()
 
