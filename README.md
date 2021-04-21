@@ -52,6 +52,16 @@ Navigate to `localhost:8080` and copy the master URL.
 docker run --name cassandra -p 9042:9042 -d cassandra:latest
 ```
 
+### **3.1 - Run CQLSH**
+```bash
+docker exec -it cassandra CQLSH
+```
+
+### **3.2 - Create `demo` keyspace**
+```bash
+CREATE KEYSPACE demo WITH REPLICATION={'class': 'SimpleStrategy', 'replication_factor': 1};
+```
+
 ## **4. Read Spark Job**
 In this job, we will look at a CSV with 100,000 records and load it into a dataframe. Once read, we will display the first 20 rows.
 ```bash
